@@ -16,5 +16,5 @@ putchar(alphabet);
 
 putchar('\n');
 
-retturn(0);
+return(0);
 }
