@@ -5,23 +5,32 @@
 * Return: Always 0 (success/correct)
 */
 int main(void)
-{
-int i;
-int j;
 
-for (int i = 0; i <= 9; i++)
 {
-for (int j = i + 1; j <= 9; j++)
+int i, j, k;
+
+i = 0;
+
+while (i < 100)
 {
-putchar(i + '0');
+j = i % 10; /* singles digit */
+k = i / 10; /* doubles digit */
+
+if (k < j)
+{
+putchar(k + '0');
 putchar(j + '0');
-if (((i * 10) + j) < 89)
+
+if (i < 89)
 {
-putchar(',');
-putchar(' ');
+putchar(44);
+putchar(32);
 }
 }
+
+i++;
 }
 putchar('\n');
+
 return (0);
 }
