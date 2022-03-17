@@ -25,9 +25,9 @@ void print_number(int n)
 	while (c)
 	{
 		if (num / (m * 10) > 0)
-			m *= 10;
+		m *= 10;
 		else
-			c = 0;
+		c = 0;
 	}
 
 	/* count down */
@@ -35,13 +35,13 @@ void print_number(int n)
 	{
 		if (m == 1)
 		{
-			_putchar(num % 10 + '0');
-			num = -1;
+		_putchar(num % 10 + '0');
+		num = -1;
 		}
 		else
 		{
-			_putchar((num / m % 10) + '0');
-			m /= 10;
+		_putchar((num / m % 10) + '0');
+		m /= 10;
 		}
 	}
 }
