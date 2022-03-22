@@ -1,8 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 
-#include "holberton.h"
-
 /**
  * reset_to_98 - reset to 98
  * @n: the pointer value
