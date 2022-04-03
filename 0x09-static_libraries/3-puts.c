@@ -1,35 +1,19 @@
 #include "main.h"
 
-
-
 /**
  *
- *  * _puts - print string
+ *  * _puts - prints a string followed by a new line to stdout
  *
- *   * @str: the array value
+ *   * @str: string to be printed
  *
- *    *
- *
- *     * Return: void
- *
- *      */
+ *    */
 
 void _puts(char *str)
-
 {
-
-		int length;
-
-
-
-			for (length = 0; str[length] != '\0'; length++)
-
-					{
-
-								_putchar(str[length]);
-
-									}
-
-				_putchar('\n');
-
+		while (*str)
+		{
+		_putchar(*str);
+		str++;
+		}
+		_putchar('\n');
 }
