@@ -1,4 +1,30 @@
 #include "main.h"
+/**
+ * _strlen - calculates length of string while ommitting null
+ *
+ *
+ * return: length of string
+ *
+ */
+
+int _strlen(char *s)
+{
+	int i=0;
+	int c=0;
+
+	while(*s)
+
+{
+	i = i + c;
+	i++;
+	*s++;
+
+}
+
+	return(i);
+
+}
+
 
 /**
  * *_strcpy - copies the string pointed to by src,
