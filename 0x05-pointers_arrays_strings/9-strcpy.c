@@ -9,10 +9,10 @@
 
 int _strlen(char *s)
 {
-	int i=0;
-	int c=0;
+	int i = 0;
+	int c = 0;
 
-	while(*s)
+	while (*s)
 
 {
 	i = i + c;
@@ -21,7 +21,7 @@ int _strlen(char *s)
 
 }
 
-	return(i);
+	return (i);
 
 }
 
@@ -36,9 +36,9 @@ int _strlen(char *s)
 char *_strcpy(char *dest, char *src)
 {
 	int i;
-	
-	for(i=0; i < _strlen(src) + 1; i++)
+
+	for (i = 0; i < _strlen (src) + 1; i++)
 	dest[i] = *(src + i);
 
-	return(dest);
+	return (dest);
 }
