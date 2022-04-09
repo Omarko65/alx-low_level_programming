@@ -1,13 +1,18 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * *_strcpy - copies the string pointed to by src,
+ * including the terminating null byte
+ * @dest: copied string
+ * @src: string to be copiedReturn: pointer to new copied string
+ * Return: pointer to new copied string
  */
-int _putchar(char c)
+char *_strcpy(char *dest, char *src)
 {
-	return (write(1, &c, 1));
+	int i;
+	
+	for(i=0; i<_strlem(src) + 1; i++)
+	dest[i] = *(src + i);
+
+	return(dest);
 }
