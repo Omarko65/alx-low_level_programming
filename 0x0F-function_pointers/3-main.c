@@ -1,42 +1,23 @@
 #include "3-calc.h"
 
 /**
- * main - the starting function
- * @argc: the number of passed arguments including the program's name
- * @argv: an array whose elements are the passed arguments
- *
- * Return: Always 0.
+ * main - performs simple operations
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 if no errors
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int x, y;
-	char o;
-	int (*op_func)(int, int);
+	register int a, b;
+	int (*fptr)(int, int);
 
 	if (argc != 4)
-	{
-		printf("Error\n");
-		return (98);
-	}
-
-	x = atoi(argv[1]);
-	y = atoi(argv[3]);
-	o = *argv[2];
-
-	op_func = get_op_func(argv[2]);
-
-	if (!op_func)
-	{
-		printf("Error\n");
-		return (99);
-	}
-
-	if ((o == '/' || o == '%') && y == 0)
-	{
-		printf("Error\n");
-		return (100);
-	}
-	printf("%d\n", op_func(x, y));
+		printf("Error\n"), exit(98);
+	fptr = get_op_func(argv[2]);
+	if (!fptr)
+		printf("Error\n"), exit(99);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	printf("%i\n", fptr(a, b));
 	return (0);
 }
-
