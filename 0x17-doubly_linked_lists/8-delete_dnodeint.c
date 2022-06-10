@@ -1,44 +1,41 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - deletes node at given idx
- * @head: pointer to head of doubly linked list
- * @index: index
- * Return: 1 if successful, -1 if failed
+ * delete_dnodeint_at_index - delete node at specific index
+ * @head: head of linked list
+ * @index: index of node to delete
+ * Return: 1 on success, -1 on failure
  */
+
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *del = NULL;
+	dlistint_t *current;
 
-	/* do nothing if nothing to delete */
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 		return (-1);
 
-	del = *head;
+	current = *head;
 
-	/* delete first node */
-	if (index == 0)
+	if (current == NULL)
+		return (-1);
+
+	while (index != 0)
 	{
-		*head = (*head)->next;
-		free(del);
-		if (*head != NULL)
-			(*head)->prev = NULL;
-		return (1);
+		current = current->next;
+		index--;
+		if (current == NULL)
+			return (-1);
 	}
 
-	/* delete nth node as long as within range of list */
-	while ((index != 0) && (del->next != NULL))
+	if (current->prev != NULL)
+		current->prev->next = current->next;
+	else
 	{
-		index -= 1;
-		del = del->next;
+		*head = current->next;
+		if (current->next != NULL)
+			current->next->prev = NULL;
+		free(current);
 	}
-	if (index == 0)
-	{
-		del->prev->next = del->next;
-		if (del->next != NULL)
-			del->next->prev = del->prev;
-		free(del);
-		return (1);
-	}
-	return (-1);
+
+	return (1);
 }
