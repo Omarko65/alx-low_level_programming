@@ -1,46 +1,40 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - insert node at specific index
- * @h: head of linked list
- * @idx: index of new node
- * @n: new node value
- * Return: inserted node
+ * insert_dnodeint_at_index - inserts a new node at a given position
+ * @h: a pointer to the starting node
+ * @idx: the index where the new node is to be inserted
+ * @n: the data to be inserted in that node
+ *
+ * Return: the address of the new node, else NULL
  */
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current;
-	dlistint_t *new;
+	dlistint_t *tmp = *h, *new;
 
-	if (h == NULL)
-		return (0);
+	if (idx == 0)
+		return (add_dnodeint(h, n));
 
-	current = *h;
-
-	while (idx != 0)
+	for (; idx != 1; idx--)
 	{
-		current = current->next;
-		idx--;
-		if (current == NULL)
+		tmp = tmp->next;
+		if (tmp == NULL)
 			return (NULL);
 	}
 
-	new = malloc(sizeof(dlistint_t));
+	if (tmp->next == NULL)
+		return (add_dnodeint_end(h, n));
 
+	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
-	{
-		free(new);
 		return (NULL);
-	}
 
 	new->n = n;
-	new->next = current;
-	new->prev = current->prev;
-	if (current->prev != NULL)
-		current->prev->next = new;
+	new->prev = tmp;
+	new->next = tmp->next;
+	tmp->next->prev = new;
+	tmp->next = new;
 
-	/*TODO: Handle special case when idx is 0 and last index*/
-
-	return (current);
+	return (new);
 }
