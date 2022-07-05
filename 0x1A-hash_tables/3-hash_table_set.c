@@ -31,6 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	n->key = strdup(key);
 	index = key_index((const unsigned char *)key, ht->size);
 
+	
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = n;
@@ -39,9 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		n1 = ht->array[index];
-		while(n1->next != NULL)
-			n1 = n1->next;
-		n1->next = n;
+		n->next = n1;
 		return 1;
 	}
 }
