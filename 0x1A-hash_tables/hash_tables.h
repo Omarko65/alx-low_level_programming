@@ -34,19 +34,8 @@ typedef struct hash_table_s
      hash_node_t **array;
 } hash_table_t;
 
-/**
- * hash_table_create - a function that creates a hash table
- * @size: The size of hash table
- *
- * Return: returns a pointer to new node or NULL if failed
- */
 hash_table_t *hash_table_create(unsigned long int size);
-
-/**
- * hash_djb2 - function that returns key of a string
- * @str: the string that needs a key
- *
- * Return: New hash key
- */
 unsigned long int hash_djb2(const unsigned char *str);
+unsigned long int key_index(const unsigned char *key, unsigned long int size);
+
 #endif
