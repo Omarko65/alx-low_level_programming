@@ -27,14 +27,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 
 	if (ht->array[index] == NULL)
+	{
 		ht->array[index] = n;
+		return 1;
+	}
 	else
 	{
 		n1 = ht->array[index];
 		while(n1->next != NULL)
 			n1 = n1->next;
 		n1->next = n;
+		return 1;
 	}
-	return 1;
 }
 		
