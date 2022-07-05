@@ -41,4 +41,12 @@ typedef struct hash_table_s
  * Return: returns a pointer to new node or NULL if failed
  */
 hash_table_t *hash_table_create(unsigned long int size);
+
+/**
+ * hash_djb2 - function that returns key of a string
+ * @str: the string that needs a key
+ *
+ * Return: New hash key
+ */
+unsigned long int hash_djb2(const unsigned char *str);
 #endif
