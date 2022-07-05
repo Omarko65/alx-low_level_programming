@@ -1,4 +1,11 @@
 #include "hash_tables.h"
+
+/**
+ * hash_djb2 - a function used to generate a hash value
+ * @str: the string that needs a key or hash value
+ *
+ * Return: hash value
+ */
 unsigned long int hash_djb2(const unsigned char *str)
 {
     unsigned long int hash;
