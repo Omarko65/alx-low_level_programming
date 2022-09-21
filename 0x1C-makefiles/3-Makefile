@@ -18,6 +18,5 @@ fclean:
 	${RM} -f *~ ${NAME}
 	${RM} -f ${OBJ}
 
-re: oclean
-	$<
-	${CC} ${OBJ} -o ${NAME}
+re: oclean all
+	$< all
