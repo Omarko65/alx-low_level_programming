@@ -4,12 +4,6 @@
 
 #### In a nutshell…
 
-*   **Auto QA review:** 33.8/52 mandatory & 0.0/13 optional
-*   **Altogether:**  **65.0%**
-    *   Mandatory: 65.0%
-    *   Optional: 0.0%
-    *   Calculation:  65.0% + (65.0% \* 0.0%)  == **65.0%**
-
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/273/giphy-2.gif)
 
   
