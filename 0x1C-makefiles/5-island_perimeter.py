@@ -3,6 +3,7 @@
 
 
 def island_perimeter(grid):
+    '''function definition'''
     num = 1
     for layer1 in grid:
         for layer2 in layer1:
