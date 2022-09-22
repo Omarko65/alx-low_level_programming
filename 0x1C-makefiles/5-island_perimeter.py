@@ -4,9 +4,9 @@
 
 def island_perimeter(grid):
     '''function definition'''
-    num = 1
+    num = 0
     for layer1 in grid:
         for layer2 in layer1:
                 if layer2 == 1:
                     num+=1
-    return num * 2
+    return num * 2 + 2
