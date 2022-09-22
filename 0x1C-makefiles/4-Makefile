@@ -9,7 +9,7 @@ all: ${OBJ}
 	${CC} ${flag} ${OBJ} -o ${NAME}
 
 clean:
-	${RM} -f *~${NAME}
+	${RM} -f *~ ${NAME}
 
 oclean:
 	${RM} -f ${OBJ}
