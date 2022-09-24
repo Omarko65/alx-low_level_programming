@@ -1,12 +1,20 @@
 #!/usr/bin/python3
-'''A script that returns perimeter of an island'''
+"""Solving a technical interview problem..."""
 
 
 def island_perimeter(grid):
-    '''function definition'''
-    num = 0
-    for layer1 in grid:
-        for layer2 in layer1:
-                if layer2 == 1:
-                    num+=1
-    return num * 2 + 2
+    """returns the perimeter of the island described in grid"""
+    width = len(grid[0])
+    height = len(grid)
+    edges = 0
+    size = 0
+
+    for i in range(height):
+        for j in range(width):
+            if grid[i][j] == 1:
+                size += 1
+                if (j > 0 and grid[i][j-1] == 1):
+                    edges += 1
+                if (i > 0 and grid[i-1][j] == 1):
+                    edges += 1
+    return size * 4 - edges * 2
