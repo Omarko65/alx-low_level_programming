@@ -1,59 +1,61 @@
-#include "search_algos.h"
 #include <stdio.h>
-
-void print_arr(int *array, int start, int end);
+#include <stdlib.h>
+#include "search_algos.h"
 
 /**
- * binary_search - searches for a value in an array of integers using BS
- * @array: array to search
- * @size: size of the array
- * @value: value to search for
+ * binary_search - a function that search for value via binary search
+ * @array: the array being searched
+ * @size: the length of the array
+ * @value: the value that is to be found in the arrray
  *
- * Return: index of value or -1
+ * Return: the index where the value was found or -1 if error
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-	int left, right, mid;
+	int low = 0;
+	int high = (int) size - 1;
+	int mid;
 
-	if (!array)
+	if (array == NULL)
 		return (-1);
 
-	left = 0;
-	right = size - 1;
-
-	while (left <= right)
-	{
-		print_arr(array, left, right);
-		mid = (left + right) / 2;
-
-		if (array[mid] > value)
-			right = mid - 1;
-		else if (array[mid] < value)
-			left = mid + 1;
-		else
+	while (low <= high) {
+		print_arr(array, low, high);
+		
+		mid = (low + high) / 2;
+		if (array[mid] == value) {
 			return (mid);
+		}
+		else if (array[mid] < value) {
+			low = mid + 1;
+		}
+		else {
+			high = mid - 1;
+		}
 	}
 	return (-1);
 }
 
 /**
-  * print_arr - print array
-  * @array: array
-  * @start: starting print
-  * @end: ending print
-  */
+ * print_arr - a function that prints an array
+ * @array: the array to be printed
+ * @left: the leftmost side of the array
+ * @right: the rightmost side of the array
+ *
+ * Return: nothing
+ */
 
-void print_arr(int *array, int start, int end)
+void print_arr(int *array, int left, int right)
 {
-	int i = start;
+	int i = left;
 
-		printf("Searching in array:");
-	while (i <= end)
-	{
+	printf("Searching in array:");
+	while (i <= right) {
 		printf(" %d", array[i]);
-		if (i < end)
+		if (i < right)
 			printf(",");
 		i++;
 	}
 	printf("\n");
-}
+}	
