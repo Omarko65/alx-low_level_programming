@@ -1,4 +1,3 @@
-
 0x1E. C - Search Algorithms
 ===========================
 
@@ -493,7 +492,7 @@ Text answer fail
 
 Skipped - Previous check failed
 
-Copyright © 2022 ALX, All rights reserved.
+Copyright © 2023 ALX, All rights reserved.
 
 ×
 
@@ -563,5 +562,3 @@ _Or spanning multiple lines..._
 var example = "hello!";
 alert(example);
 \`\`\`
-
-(function(i,s,o,g,r,a,m){i\['GoogleAnalyticsObject'\]=r;i\[r\]=i\[r\]||function(){ (i\[r\].q=i\[r\].q||\[\]).push(arguments)},i\[r\].l=1\*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)\[0\];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-67152800-9', 'auto', { userId: '26582' } ); ga('send', 'pageview'); $(document).ready(function() { ga(function(tracker) { var clientId = tracker.get('clientId'); $('.ga-client-id').val(clientId); }); });
