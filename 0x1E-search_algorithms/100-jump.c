@@ -1,20 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "search_algos.h"
 #include <math.h>
-#include <stdio.h>
 /**
- * jump_search - search for a value in an array using jump search
- * @array: array to search in
- * @size: size of the array
- * @value: value to search for
+ * jump_search - a func that searches for a value using jump search algo
+ * @array: the array being searched
+ * @size: the number of elements in array
+ * @value: the value being searched for
  *
- * Return: index of the value or -1
+ * Return: index where value is located
  */
 
-int jump_search(int *array, size_t size, int value)
+int jump_search(int *array,  size_t size, int value)
 {
 	size_t i, jump, curr, forw;
 	int result = -1;
-
+	
 	if (!array)
 		return (result);
 
@@ -25,15 +26,15 @@ int jump_search(int *array, size_t size, int value)
 	{
 		forw = curr + jump;
 		printf("Value checked array[%ld] = [%d]\n", curr, array[curr]);
-		if (forw >= size - 1 ||  array[forw] > value)
+		if (forw >= size - 1 || array[forw] > value)
 		{
 			printf("Value found between indexes [%ld] and [%ld]\n",
-			       curr, forw);
+				curr, forw);
 			i = curr;
 			while (i <= forw && i < size)
 			{
 				printf("Value checked array[%ld] = [%d]\n",
-				       i, array[i]);
+					i, array[i]);
 				if (array[i] == value)
 					return ((int)i);
 				i++;
@@ -42,6 +43,5 @@ int jump_search(int *array, size_t size, int value)
 		}
 		curr = forw;
 	}
-
 	return (result);
 }
