@@ -14,11 +14,11 @@ void print_arr(int *array, size_t left, size_t right);
 
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t i, start_block, end_block;
-	
+	size_t i, block_one, end_block;
+
 	if (!array)
-		return(-1);
-	
+		return (-1);
+
 	if (array[0] == value)
 		return (0);
 	i = 1;
@@ -29,14 +29,14 @@ int exponential_search(int *array, size_t size, int value)
 	}
 
 
-	start_block = i / 2;
+	block_one = i / 2;
 	if (i > size - 1)
 		end_block = size - 1;
 	else
 		end_block = i;
 
-	printf("Value found between indexes [%ld] and [%ld]\n", start_block, end_block);
-	return (binary_look(array, start_block, end_block, value));
+	printf("Value found between indexes [%ld] and [%ld]\n", block_one, end_block);
+	return (binary_look(array, block_one, end_block, value));
 }
 
 /**
@@ -54,7 +54,7 @@ int binary_look(int *array, size_t low, size_t high, int value)
 	size_t mid;
 
 	if (array == NULL)
-		return(-1);
+		return (-1);
 
 	while (low <= high)
 	{
@@ -85,7 +85,7 @@ void print_arr(int *array, size_t left, size_t right)
 	size_t i;
 
 	printf("Searching in array:");
-	for( i = left; i <= right; i++)
+	for (i = left; i <= right; i++)
 	{
 		printf(" %d", array[i]);
 		if (i != right)
