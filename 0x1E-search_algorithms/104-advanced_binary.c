@@ -41,7 +41,12 @@ int binarySearch(int *array, size_t start, size_t end, int value)
 	
 	print_arr(array, start, end);
 	if (value == array[m])
-		return ((int)m);
+	{
+		if (m > start && array[m - 1] == value)
+			return (binarySearch(array, start, m - 1, value));
+		else
+			return ((int)m);
+	}
 
 	else if (array[m] < value)
 		return (binarySearch(array, m + 1, end, value));
