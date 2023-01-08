@@ -26,19 +26,20 @@ int advanced_binary(int *array, size_t size, int value)
  * @start: the first element of the array
  * @end: the end of the array
  * @value: the value being looked for
- * 
+ *
  * Return: returns -1 or index of found value
  */
 
 int binarySearch(int *array, size_t start, size_t end, int value)
 {
 	size_t m = start + (end - start) / 2;
+
 	if (!array)
 		return (-1);
 
 	if (start > end)
 		return (-1);
-	
+
 	print_arr(array, start, end);
 	if (value == array[m])
 	{
@@ -68,14 +69,14 @@ int binarySearch(int *array, size_t start, size_t end, int value)
 
 void print_arr(int *array, size_t left, size_t right)
 {
-        size_t i;
+	size_t i;
 
-        printf("Searching in array:");
-        for (i = left; i <= right; i++)
-        {
-                printf(" %d", array[i]);
-                if (i != right)
-                        printf(",");
-        }
-        printf("\n");
+	printf("Searching in array:");
+	for (i = left; i <= right; i++)
+	{
+		printf(" %d", array[i]);
+		if (i != right)
+			printf(",");
+	}
+	printf("\n");
 }
